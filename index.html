@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>กีฬาสี (แยกปีการศึกษา)</title>
+    <title>กีฬาสี (คนดู)</title>
     
     <!-- Tailwind CSS for styling -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -89,6 +89,23 @@
                 height: 1.75rem;
             }
         }
+
+        .leaderboard-medals {
+            flex-wrap: nowrap;
+            white-space: nowrap;
+        }
+        .leaderboard-medal-pill {
+            flex: 0 0 auto;
+            white-space: nowrap;
+        }
+        .viewer-mode #headerActions,
+        .viewer-mode #admin-main-controls,
+        .viewer-mode #addSportsBtn,
+        .viewer-mode #addAthleticsBtn,
+        .viewer-mode .edit-event-btn,
+        .viewer-mode .delete-event-btn {
+            display: none !important;
+        }
         @media (max-width: 640px) {
             #app {
                 padding: 0.75rem;
@@ -128,7 +145,49 @@
             .leaderboard-card {
                 padding: 0.9rem !important;
                 border-radius: 1.25rem !important;
-                gap: 0.75rem !important;
+                gap: 0.55rem !important;
+            }
+            .leaderboard-mascot {
+                width: 3.75rem !important;
+                height: 3.75rem !important;
+                font-size: 2.15rem !important;
+            }
+            .leaderboard-team-name {
+                font-size: 1.75rem !important;
+                line-height: 1.05 !important;
+            }
+            .leaderboard-medals {
+                gap: 0.28rem !important;
+                margin-top: 0.4rem !important;
+            }
+            .leaderboard-medal-pill {
+                gap: 0.2rem !important;
+                padding: 0.32rem 0.42rem !important;
+                border-radius: 0.75rem !important;
+                min-width: 2.85rem;
+                justify-content: center;
+            }
+            .leaderboard-medal-icon {
+                font-size: 1rem !important;
+                line-height: 1 !important;
+            }
+            .leaderboard-medal-number {
+                font-size: 1.2rem !important;
+                line-height: 1 !important;
+            }
+            .leaderboard-score-box {
+                min-width: 3.35rem !important;
+            }
+            .leaderboard-score-number {
+                font-size: 2.45rem !important;
+            }
+            .leaderboard-score-label {
+                font-size: 0.82rem !important;
+                line-height: 1.05 !important;
+            }
+            .leaderboard-rank {
+                width: 2.2rem !important;
+                font-size: 2.9rem !important;
             }
         }
 
@@ -178,6 +237,26 @@
                     <button id="resetYearDataBtn" class="w-full sm:w-auto bg-red-500 hover:bg-red-600 text-white font-bold py-3 px-6 rounded-full shadow-lg transform hover:scale-105 transition-transform duration-300">♻️ รีเซ็ตรายการเริ่มต้น</button>
                 </div>
                 <p id="currentYearText" class="text-center text-sm text-gray-500 mt-2">กำลังใช้ปีการศึกษา 2569</p>
+            </div>
+            <div id="viewStatsBox" class="bg-white/70 p-4 rounded-2xl shadow-inner max-w-2xl mx-auto text-center">
+                <div class="text-sm font-semibold text-gray-500">👁️ ยอดเปิดหน้าเว็บคนดู</div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-3">
+                    <div class="bg-amber-50 border border-amber-100 rounded-2xl p-4">
+                        <div class="text-xs font-bold text-gray-500">รายวัน</div>
+                        <div id="viewTodayCountText" class="text-4xl font-extrabold text-amber-700 mt-1">0 ครั้ง</div>
+                        <div id="viewTodayDateText" class="text-xs text-gray-500 mt-1">วันนี้</div>
+                    </div>
+                    <div class="bg-blue-50 border border-blue-100 rounded-2xl p-4">
+                        <div class="text-xs font-bold text-gray-500">สะสม</div>
+                        <div id="viewTotalCountText" class="text-4xl font-extrabold text-blue-700 mt-1">0 ครั้ง</div>
+                        <div class="text-xs text-gray-500 mt-1">รวมทุกครั้งที่เปิดไฟล์คนดู</div>
+                    </div>
+                </div>
+                <div class="flex flex-col sm:flex-row justify-center gap-2 mt-4">
+                    <button id="clearTodayViewsBtn" class="w-full sm:w-auto bg-amber-500 hover:bg-amber-600 text-white font-bold py-2 px-5 rounded-full shadow transition-colors">🧹 ล้างยอดวันนี้</button>
+                    <button id="clearAllViewsBtn" class="w-full sm:w-auto bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-5 rounded-full shadow transition-colors">🗑️ ล้างยอดสะสม</button>
+                </div>
+                <div class="text-xs text-gray-500 mt-2">นับทุกครั้งที่เปิดไฟล์สำหรับคนดูเท่านั้น</div>
             </div>
             <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
                 <button id="clearNotificationsBtn" class="w-full sm:w-auto bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-3 px-8 rounded-full shadow-lg transform hover:scale-105 transition-transform duration-300">
