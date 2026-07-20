@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="th">
 <head>
@@ -57,6 +56,205 @@
         }
         .draggable-item:active, .draggable-group:active {
             cursor: grabbing;
+        }
+
+
+
+
+
+        /* Grand celebration hero - symbols only, lightweight HTML/CSS, no Firebase writes */
+        .spain-champion-banner {
+            position: relative;
+            isolation: isolate;
+            overflow: hidden;
+            min-height: 190px;
+            border-radius: 2.25rem;
+            border: 1px solid rgba(255, 255, 255, 0.68);
+            background:
+                radial-gradient(circle at 18% 8%, rgba(255, 255, 255, 0.85), transparent 24%),
+                radial-gradient(circle at 80% 16%, rgba(255, 236, 153, 0.88), transparent 24%),
+                linear-gradient(135deg, #7f1d1d 0%, #b91c1c 28%, #f59e0b 52%, #facc15 68%, #991b1b 100%);
+            box-shadow:
+                0 24px 60px rgba(120, 53, 15, 0.18),
+                inset 0 1px 0 rgba(255, 255, 255, 0.70),
+                inset 0 -1px 0 rgba(127, 29, 29, 0.22);
+        }
+        .spain-champion-banner::before {
+            content: "";
+            position: absolute;
+            inset: 10px;
+            z-index: -1;
+            border-radius: 1.8rem;
+            border: 1px solid rgba(255, 255, 255, 0.38);
+            background:
+                linear-gradient(90deg, rgba(255,255,255,0.22), transparent 18%, rgba(255,255,255,0.18) 52%, transparent 82%),
+                repeating-linear-gradient(135deg, rgba(255,255,255,0.13) 0 1px, transparent 1px 18px);
+            opacity: 0.95;
+            pointer-events: none;
+        }
+        .spain-champion-banner::after {
+            content: "";
+            position: absolute;
+            width: 520px;
+            height: 520px;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            z-index: -2;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(255,255,255,0.54) 0 5%, rgba(255, 236, 153, 0.34) 18%, transparent 62%);
+            pointer-events: none;
+        }
+        .celebration-stage {
+            position: relative;
+            min-height: 170px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1.25rem 1rem;
+        }
+        .celebration-crown {
+            position: relative;
+            display: grid;
+            place-items: center;
+            width: 9.6rem;
+            height: 9.6rem;
+            border-radius: 999px;
+            background:
+                radial-gradient(circle at 30% 20%, rgba(255,255,255,0.95), rgba(255,255,255,0.28) 28%, transparent 42%),
+                linear-gradient(135deg, rgba(255,255,255,0.74), rgba(255,248,196,0.50));
+            box-shadow:
+                0 22px 42px rgba(127, 29, 29, 0.26),
+                inset 0 2px 0 rgba(255,255,255,0.72),
+                inset 0 -12px 28px rgba(146, 64, 14, 0.12);
+        }
+        .celebration-crown::before,
+        .celebration-crown::after {
+            content: "";
+            position: absolute;
+            inset: -18px;
+            border-radius: 999px;
+            border: 2px solid rgba(255, 255, 255, 0.34);
+        }
+        .celebration-crown::after {
+            inset: -32px;
+            border-color: rgba(255, 237, 167, 0.32);
+            border-style: dashed;
+        }
+        .celebration-trophy {
+            position: relative;
+            z-index: 2;
+            font-size: 5.15rem;
+            line-height: 1;
+            filter: drop-shadow(0 12px 12px rgba(127, 29, 29, 0.24));
+            transform: translateY(-2px);
+        }
+        .celebration-flag {
+            position: absolute;
+            width: 7.8rem;
+            height: 4.75rem;
+            border-radius: 1.15rem;
+            overflow: hidden;
+            border: 3px solid rgba(255, 255, 255, 0.92);
+            box-shadow: 0 16px 26px rgba(127, 29, 29, 0.22);
+            transform: rotate(-7deg);
+        }
+        .celebration-flag.left {
+            left: clamp(1rem, 7vw, 5.5rem);
+            top: 2.3rem;
+        }
+        .celebration-flag.right {
+            right: clamp(1rem, 7vw, 5.5rem);
+            bottom: 2.1rem;
+            transform: rotate(7deg);
+        }
+        .celebration-flag div:nth-child(1),
+        .celebration-flag div:nth-child(3) { height: 25%; background: #aa151b; }
+        .celebration-flag div:nth-child(2) { height: 50%; background: #f1bf00; }
+        .celebration-orbit {
+            position: absolute;
+            display: grid;
+            place-items: center;
+            width: 4.7rem;
+            height: 4.7rem;
+            border-radius: 999px;
+            background: rgba(255,255,255,0.74);
+            border: 1px solid rgba(255,255,255,0.68);
+            box-shadow: 0 14px 28px rgba(127, 29, 29, 0.16), inset 0 1px 0 rgba(255,255,255,0.85);
+            font-size: 2.35rem;
+            line-height: 1;
+        }
+        .celebration-orbit.o1 { left: 20%; bottom: 1.55rem; }
+        .celebration-orbit.o2 { right: 20%; top: 1.55rem; }
+        .celebration-orbit.o3 { left: 32%; top: 1.3rem; width: 3.7rem; height: 3.7rem; font-size: 1.9rem; }
+        .celebration-orbit.o4 { right: 32%; bottom: 1.25rem; width: 3.7rem; height: 3.7rem; font-size: 1.9rem; }
+        .celebration-spark {
+            position: absolute;
+            display: block;
+            width: 0.62rem;
+            height: 0.62rem;
+            border-radius: 999px;
+            background: rgba(255, 255, 255, 0.92);
+            box-shadow: 0 0 18px rgba(255, 255, 255, 0.85);
+        }
+        .celebration-spark.s1 { left: 12%; top: 28%; }
+        .celebration-spark.s2 { left: 28%; bottom: 18%; background:#fde68a; }
+        .celebration-spark.s3 { right: 14%; top: 35%; }
+        .celebration-spark.s4 { right: 30%; bottom: 22%; background:#fde68a; }
+        .celebration-spark.s5 { left: 50%; top: 9%; width: .46rem; height: .46rem; }
+        .celebration-ribbon {
+            position: absolute;
+            left: 50%;
+            bottom: 1rem;
+            transform: translateX(-50%);
+            width: min(76%, 540px);
+            height: 0.55rem;
+            border-radius: 999px;
+            background: linear-gradient(90deg, #aa151b 0 28%, #f1bf00 28% 72%, #aa151b 72% 100%);
+            box-shadow: 0 8px 18px rgba(120, 53, 15, 0.16);
+        }
+        @media (prefers-reduced-motion: no-preference) {
+            .celebration-trophy { animation: trophyFloat 4.8s ease-in-out infinite; }
+            .celebration-orbit { animation: symbolFloat 5.8s ease-in-out infinite; }
+            .celebration-orbit.o2, .celebration-orbit.o4 { animation-delay: -2.4s; }
+            .celebration-spark { animation: sparklePulse 2.8s ease-in-out infinite; }
+            .celebration-spark.s2, .celebration-spark.s4 { animation-delay: -1.3s; }
+        }
+        @keyframes trophyFloat {
+            0%, 100% { transform: translateY(-2px) scale(1); }
+            50% { transform: translateY(-8px) scale(1.025); }
+        }
+        @keyframes symbolFloat {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-8px); }
+        }
+        @keyframes sparklePulse {
+            0%, 100% { transform: scale(0.75); opacity: 0.55; }
+            50% { transform: scale(1.35); opacity: 1; }
+        }
+        @media (max-width: 640px) {
+            .spain-champion-banner {
+                min-height: 158px;
+                border-radius: 1.55rem;
+                margin-bottom: 1rem;
+            }
+            .spain-champion-banner::before { inset: 7px; border-radius: 1.25rem; }
+            .celebration-stage { min-height: 142px; padding: 1rem 0.75rem; }
+            .celebration-crown { width: 7.15rem; height: 7.15rem; }
+            .celebration-crown::before { inset: -12px; }
+            .celebration-crown::after { inset: -22px; }
+            .celebration-trophy { font-size: 3.95rem; }
+            .celebration-flag { width: 5.25rem; height: 3.25rem; border-radius: .85rem; border-width: 2px; }
+            .celebration-flag.left { left: .72rem; top: 1.15rem; }
+            .celebration-flag.right { right: .72rem; bottom: 1.12rem; }
+            .celebration-orbit { width: 3.45rem; height: 3.45rem; font-size: 1.72rem; }
+            .celebration-orbit.o1 { left: 17%; bottom: .85rem; }
+            .celebration-orbit.o2 { right: 17%; top: .85rem; }
+            .celebration-orbit.o3 { left: 34%; top: .55rem; width: 2.8rem; height: 2.8rem; font-size: 1.38rem; }
+            .celebration-orbit.o4 { right: 34%; bottom: .55rem; width: 2.8rem; height: 2.8rem; font-size: 1.38rem; }
+            .celebration-ribbon { width: 78%; height: .42rem; bottom: .65rem; }
+            .celebration-spark.s1 { left: 10%; top: 42%; }
+            .celebration-spark.s3 { right: 10%; top: 45%; }
         }
 
 
@@ -287,6 +485,25 @@
 
         <!-- Tab Content -->
         <div id="main-tab" class="tab-content active">
+
+
+            <section id="spainChampionBanner" class="spain-champion-banner mb-6" aria-label="celebration symbols">
+                <div class="celebration-stage" aria-hidden="true">
+                    <span class="celebration-flag left"><div></div><div></div><div></div></span>
+                    <span class="celebration-flag right"><div></div><div></div><div></div></span>
+                    <span class="celebration-spark s1"></span>
+                    <span class="celebration-spark s2"></span>
+                    <span class="celebration-spark s3"></span>
+                    <span class="celebration-spark s4"></span>
+                    <span class="celebration-spark s5"></span>
+                    <span class="celebration-orbit o1">⚽</span>
+                    <span class="celebration-orbit o2">🎉</span>
+                    <span class="celebration-orbit o3">⭐</span>
+                    <span class="celebration-orbit o4">🇪🇸</span>
+                    <span class="celebration-crown"><span class="celebration-trophy">🏆</span></span>
+                    <span class="celebration-ribbon"></span>
+                </div>
+            </section>
             <main id="leaderboard" class="space-y-4 relative">
                 <!-- Leaderboard cards will be dynamically inserted here -->
             </main>
